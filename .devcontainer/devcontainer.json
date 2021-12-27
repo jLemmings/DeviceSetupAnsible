@@ -9,12 +9,8 @@
     "mhutchie.git-graph",
     "bierner.markdown-mermaid",
     "tomaciazek.ansible",
-    "gitlab.gitlab-workflow"
+    "eamodio.gitlens"
   ],
-  "remoteEnv": {
-    "VAULT_USER_USERNAME": "${localEnv:VAULT_USER_USERNAME}",
-    "VAULT_USER_PASSWORD": "${localEnv:VAULT_USER_PASSWORD}"
-  },
   "settings": {
     "terminal.integrated.profiles.linux": {
       "bash": {
