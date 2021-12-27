@@ -16,7 +16,7 @@ RUN echo deb "http://deb.debian.org/debian buster-backports main" >> /etc/apt/so
 
 # Update apt, install sshpass, install git from backports
 RUN apt-get update && apt-get install -y sshpass openssh-client && \
-    apt-get -y -t buster-backports install git git-lfs
+    apt-get -y -t buster-backports install git git-lfs inetutils-ping
 
 # Enable auto completion 
 RUN apt-get update && \
