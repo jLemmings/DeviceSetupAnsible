@@ -1,0 +1,39 @@
+{
+  "name": "NISLAB Ansible Devcontainer",
+  "dockerFile": "Dockerfile",
+  "extensions": [
+    "wholroyd.jinja",
+    "samuelcolvin.jinjahtml",
+    "esbenp.prettier-vscode",
+    "yzhang.markdown-all-in-one",
+    "mhutchie.git-graph",
+    "bierner.markdown-mermaid",
+    "tomaciazek.ansible",
+    "gitlab.gitlab-workflow"
+  ],
+  "remoteEnv": {
+    "VAULT_USER_USERNAME": "${localEnv:VAULT_USER_USERNAME}",
+    "VAULT_USER_PASSWORD": "${localEnv:VAULT_USER_PASSWORD}"
+  },
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "args": ["-l"]
+      },
+      "sh": {
+        "path": "sh",
+        "args": ["-l"]
+      },
+      "zsh": {
+        "path": "zsh",
+        "args": ["-l"]
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.formatOnSave": true,
+    "ansible.ansible.useFullyQualifiedCollectionNames": true
+  },
+  "postCreateCommand": "rm -rf /root/.gitconfig",
+  "postStartCommand": "git config --global core.editor 'code --wait' && git config --global merge.tool vscode && git config --global mergetool.vscode.cmd 'code --wait $MERGED' && git config --global diff.tool vscode && git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE' && git lfs install && pre-commit install"
+}

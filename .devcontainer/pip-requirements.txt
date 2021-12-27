@@ -1,0 +1,21 @@
+# python pip module requirements for krinflab-ansible repository
+# used for devcontainer and ci pipeline
+
+# Ansible
+ansible==5.0.1               # ansible itself
+
+# Linting
+ansible-lint==5.3.0          # ansible-lint, make sure .pre-commit-config.yaml uses same version
+yamllint==1.26.3             # yamllint, make sure .pre-commit-config.yaml uses same version
+
+# Ansible Requirements
+pywinrm                      # ansible WinRM connections
+pypsrp                       # PowerShell Remoting over WinRM
+requests[socks]              # Socks proxy
+requests-credssp             # CredSSP authentication
+hvac                         # HashiCorp Vault lookups
+python-gitlab                # GitLab API interaction, specific version required
+pyvmomi                      # vSphere API interaction
+dnspython                    # DNS lookup
+paramiko                     # python implementation of the SSHv2 protocol
+infoblox-client              # interaction with infoblox
